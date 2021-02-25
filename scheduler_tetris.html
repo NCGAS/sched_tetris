@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HPC Game</title>
+  <link rel="stylesheet" href="code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="snappycss.css">
+  <script src="code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="js/jquerycollision1.0.2min/jquery-collision.min.js"></script>
+  <script type="text/javascript" src="scheduler_tetris.js"></script>
+
+
+<!-- Collision detection working thanks to:
+       https://stackoverflow.com/questions/23905291/jquery-collision-draggable-and-obstacle-being-the-same-element
+       http://quabr.com/58366567/is-there-a-working-version-of-jquery-ui-draggable-collision-plugin-with-jquery-3 
+    Good material at:
+    https://jqueryui.com/draggable/#snap-to
+-->
+
+<script src="js/jquidragcollide1.0.2min/jquery-ui-draggable-collision.js"></script>
+</head>
+<body>
+<div class="grid">
+
+<header>HPC Game</header>
+
+<div id="instruction">
+        <p>Instructions: Drag blocks from the pile at the bottom into one of the 3 possible HPC resources. Blocks will light up if they are accepted by the scheduler! Blocks must fit completely inside the resource based on CPUs, walltime, and memory requested. Stats will update in the table on the right as you complete the puzzle. Optimize using your best judgement - what is the most important factor to consider, in your opinion?  Keep in mind that one small block inside each of the 3 HPC resources equals 1 hour.</p>
+</div>
+
+
+<div id="hours1" class="hours labels">
+Hours
+</div>
+
+
+<div id="kLabel" class="labels">Karst - general purpose computing</div>
+<div id="Karst" class="dropSmallMem ui-widget-header">
+</div>
+
+<div id="hours2" class="hours labels">
+Hours
+</div>
+
+<div id="cLabel" class="labels">Carbonate - large memory cluster</div>
+<div id="Co3" class="dropLargeMem ui-widget-header">
+</div>
+
+<div id="hours3" class="hours labels">
+Hours
+</div>
+
+<div id="brLabel" class="labels">Big Red 200 - CPU-heavy resource</div>
+<div id="BigRed200" class="dropSmallMem ui-widget-header">
+</div>
+
+<div id="tables" class="tableclass">
+<table id="userstats" border="0">
+<tr><th>User</th> <th>CPU hours scheduled</th></tr>
+</table>
+<table id="hpcstats" border="0">
+<tr><th>HPC Resource</th> <th>CPU hours scheduled</th> <th>Utilization %</th></tr>
+</table>
+</div>
+
+<div id="cpus1" class="cpus labels">
+CPUs
+</div>
+
+<div id="cpus2" class="cpus labels">
+CPUs
+</div>
+
+<div id="cpus3" class="cpus labels">
+CPUs
+</div>
+
+
+<div id="draggable1" class="smallmem draggable hack ui-widget-content width_1 height_1 user_srogers">
+  s_rogers
+</div>
+<div id="draggable2" class="smallmem draggable hack ui-widget-content width_1 height_1 user_srogers">
+  s_rogers
+</div>
+<div id="draggable3" class="smallmem draggable hack ui-widget-content width_1 height_1 user_srogers">
+  s_rogers
+</div>
+<div id="draggable4" class="smallmem draggable hack ui-widget-content width_1 height_1 user_srogers">
+  s_rogers
+</div>
+<div id="draggable5" class="smallmem draggable hack ui-widget-content width_1 height_2 user_srogers">
+  s_rogers
+</div>
+<div id="draggable6" class="draggable hack ui-widget-content width_2 height_3 user_srogers">
+  s_rogers<br> Large mem only
+</div>
+<div id="draggable7" class="smallmem draggable hack ui-widget-content width_4 height_1 user_nromanov">
+  n_romanoff
+</div>
+<div id="draggable8" class="smallmem draggable hack ui-widget-content width_3 height_3 user_nromanov">
+  n_romanoff
+</div>
+<div id="draggable9" class="smallmem draggable hack ui-widget-content width_2 height_2 user_bbanner">
+  b_banner
+</div>
+<div id="draggable10" class="smallmem draggable hack ui-widget-content width_1 height_4 user_bbanner">
+  b_banner
+</div>
+<div id="draggable11" class="smallmem draggable hack ui-widget-content width_3 height_1 user_bbanner">
+  b_banner
+</div>
+<div id="draggable12" class="smallmem draggable hack ui-widget-content width_3 height_3 user_tstark">
+  t_stark
+</div>
+<div id="draggable13" class="smallmem draggable hack ui-widget-content width_4 height_4 user_tstark">
+  t_stark
+</div>
+</div>
+
+</body>
+
+</html>

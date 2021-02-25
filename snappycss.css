@@ -1,0 +1,311 @@
+:root {
+--blockSize: 5rem;
+}
+
+.grid {
+display: grid;
+grid-template-columns: .1rem repeat(17, var(--blockSize)) 2rem 2rem;
+grid-template-rows: 1rem 3rem 3rem 1rem 1rem 1.5rem repeat(9, var(--blockSize)) 2rem;
+grid-gap: 0;
+}
+
+.draggable {
+box-sizing: border-box;
+padding: 0;
+margin: 0;
+font-size: .9em;
+color: white;
+text-align: center;
+border: none;
+}
+
+table {
+width: 15em;
+}
+
+td, th {
+padding-right: 1em;	
+}
+
+th {
+border-style: none none solid none;
+border-bottom-width: thin;
+padding-bottom: .2em;	
+}
+
+/* The following have the pattern width_# where # can be parsed as an int. */
+.width_1 {
+width: var(--blockSize);
+}
+
+.width_2 {
+width: calc(var(--blockSize) * 2);
+}
+
+.width_3 {
+width: calc(var(--blockSize) * 3);
+}
+
+.width_4 {
+width: calc(var(--blockSize) * 4);
+}
+
+.width_5 {
+width: calc(var(--blockSize) * 5);
+}
+
+.height_1 {
+height: var(--blockSize);
+}
+
+.height_2 {
+height: calc(var(--blockSize) * 2);
+}
+
+.height_3 {
+height: calc(var(--blockSize) * 3);
+}
+
+.height_4 {
+height: calc(var(--blockSize) * 4);
+}
+/* these have user_ as the prefix so I can parse out user name. */
+.user_tstark {
+background-color: #1b85b8;
+}
+
+.user_srogers {
+background-color: #5a5255;
+}
+
+.user_nromanov {
+background-color: #559e83;
+}
+
+.user_bbanner {
+background-color: #ae5a41;
+}
+
+.ui-widget-header p, .ui-widget-content p {
+margin: 0;
+}
+
+
+.ui-widget-header {
+background-size: var(--blockSize) var(--blockSize);
+background-image:
+    linear-gradient(to right, grey 2px, transparent 1px),
+    linear-gradient(to bottom, grey 2px, transparent 1px);
+border: none;
+}
+
+.ui-over {
+border: 5px dashed green;
+}
+
+.dropped {
+border: none;
+filter: brightness(150%);
+}
+
+header {
+grid-column: 1 / 5;
+grid-row: 2 / 4;
+justify-self: center;
+align-self: center;
+font-size: 2em;
+font-weight: bold;
+}
+
+#instruction {
+grid-column: 5 / 16;
+grid-row: 1 / 4;
+justify-self: left;
+align-self: left;
+font-weight: bold;
+}
+
+#up {
+grid-column: 18;
+grid-row: 2;
+}
+
+#down {
+grid-column: 18;
+grid-row: 3;
+}
+
+
+.dropIt {
+outline-style: groove;
+outline-width: .8em;
+}
+
+.dropSmallMem {
+outline-style: groove;
+outline-width: .8em;
+background-color: #ebebeb;
+}
+
+.dropLargeMem {
+outline-style: groove;
+outline-width: .8em;
+background-color: #ebebeb;
+}
+
+
+#kLabel {
+grid-column: 3 / 7;
+grid-row: 5;
+text-align: center;
+}
+
+#cLabel {
+grid-column: 7 / 12;
+grid-row: 5;
+text-align: center;
+}
+
+#brLabel {
+grid-column: 12 / 17;
+grid-row: 5;
+text-align: center;
+}
+
+#tables {
+grid-column: 18 / 21;
+grid-row: 5 / 11;
+}
+
+#hours1 {
+grid-column: 2;
+grid-row: 8 / 10;
+margin-left: .1em;  
+}
+
+#hours2 {
+grid-column: 7;
+grid-row: 8 / 10;
+margin-left: .1em; 
+}
+
+#hours3 {
+grid-column: 11;
+grid-row: 8 / 10;
+margin-left: .1em; 
+}
+
+.hours {
+writing-mode: sideways-lr;
+text-align: center;
+margin-left:  2.3em;
+}
+
+#cpus1 {
+grid-column: 4/6;
+grid-row: 11;
+}
+
+#cpus2 {
+grid-column: 9;
+grid-row: 11;
+}
+
+#cpus3 {
+grid-column: 14;
+grid-row: 11;
+}
+
+.cpus {
+text-align: center;
+margin-top:  1.5em;
+}
+
+.labels {
+font-family: "Arial Black", Gadget, sans-serif;
+}	 
+
+#Karst {
+grid-column: 3 / 7;
+grid-row: 7 / 11;
+outline-color: #4f5f76; 
+}
+
+
+#Co3 {
+grid-column: 8 / 11;
+grid-row: 7 / 11;
+outline-color: #DCC7AA; 
+}
+
+#BigRed200 {
+grid-column: 12 / 17;
+grid-row: 7 / 11;
+outline-color: #9e363a; 
+}
+
+
+#draggable1 {
+grid-column: 3;
+grid-row: 12;
+}
+
+#draggable2 {
+grid-column: 3;
+grid-row: 13;
+}
+
+#draggable3 {
+grid-column: 3;
+grid-row: 14;
+}
+
+#draggable4 {
+grid-column: 3;
+grid-row: 15;
+}
+
+#draggable5 {
+grid-column: 4;
+grid-row: 12 / 14;
+}
+
+#draggable6 {
+grid-column: 5 / 6;
+grid-row: 12 / 15;
+}
+
+#draggable7 {
+grid-column: 4 / 9;
+grid-row: 15 ;
+}
+
+#draggable8 {
+grid-column: 7 / 10;
+grid-row: 12 / 15;
+}
+
+#draggable9 {
+grid-column: 10 / 12;
+grid-row: 12 / 14;
+}
+
+#draggable10 {
+grid-column: 12;
+grid-row: 12 / 16;
+}
+
+#draggable11 {
+grid-column: 9 / 12;
+grid-row: 15;
+}
+
+#draggable12 {
+grid-column: 13 / 16;
+grid-row: 12 / 15;
+}
+
+#draggable13 {
+grid-column: 16 / 20;
+grid-row: 12 / 16;
+}
